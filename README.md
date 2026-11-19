@@ -1,4 +1,4 @@
-# @cedw032/cidr-types
+# @chadedwards/cidr-types
 
 IPv4 and CIDR literal types, runtime validation and range membership proofs.
 Zero runtime dependencies. TypeScript 5.4+; ESM and CommonJS; Node.js 20+.
@@ -6,14 +6,14 @@ The runtime is platform-independent JavaScript and uses no Node APIs.
 IPv6 is outside this package's scope.
 
 ```sh
-npm install @cedw032/cidr-types
+npm install @chadedwards/cidr-types
 ```
 
 ## Functions that accept only addresses or subnets in a network
 
 ```ts
-import { network } from "@cedw032/cidr-types";
-import type { IPv4In, CidrWithin } from "@cedw032/cidr-types";
+import { network } from "@chadedwards/cidr-types";
+import type { IPv4In, CidrWithin } from "@chadedwards/cidr-types";
 
 const office = network("10.20.0.0/16");
 
@@ -44,8 +44,8 @@ objects to serialize, mutate, or unwrap.
 ## Literal constructors and a base IP address type
 
 ```ts
-import { ip, cidr, parseIp, parseCidr, tryIp, isIp } from "@cedw032/cidr-types";
-import type { IPv4, IPAddress, Cidr } from "@cedw032/cidr-types";
+import { ip, cidr, parseIp, parseCidr, tryIp, isIp } from "@chadedwards/cidr-types";
+import type { IPv4, IPAddress, Cidr } from "@chadedwards/cidr-types";
 
 const host = ip("192.168.1.5"); // IPv4<'192.168.1.5'>
 const block = cidr("192.168.1.255/24"); // Cidr<'192.168.1.255/24'>
@@ -73,8 +73,8 @@ an exact spelling when supplied. Merely writing a type alias validates no value.
 ## Give runtime input a membership proof
 
 ```ts
-import { network, parseIp, parseCidr } from "@cedw032/cidr-types";
-import type { IPv4In } from "@cedw032/cidr-types";
+import { network, parseIp, parseCidr } from "@chadedwards/cidr-types";
+import type { IPv4In } from "@chadedwards/cidr-types";
 
 const office = network("10.20.0.0/16");
 function connect(address: IPv4In<"10.20.0.0/16">) {
@@ -108,7 +108,7 @@ import type {
   Relation,
   Expect,
   Equal,
-} from "@cedw032/cidr-types";
+} from "@chadedwards/cidr-types";
 
 type Checks = [
   Expect<Equal<ContainsIp<"10.0.0.0/8", "10.1.2.3">, true>>,
@@ -133,7 +133,7 @@ The familiar `RangeBIsContainedByA<Cidr<A>,Cidr<B>>` and
 ## Construct test cases directly from literals
 
 ```ts
-import { network } from "@cedw032/cidr-types";
+import { network } from "@chadedwards/cidr-types";
 
 const office = network("10.20.0.0/16");
 const cases = [

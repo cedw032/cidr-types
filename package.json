@@ -1,6 +1,6 @@
 {
-  "name": "@cedw032/cidr-types",
-  "version": "0.1.0",
+  "name": "@chadedwards/cidr-types",
+  "version": "0.1.1",
   "description": "IPv4 and CIDR literal types, range proofs and runtime validation",
   "type": "module",
   "main": "./dist/cjs/index.js",
